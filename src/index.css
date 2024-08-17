@@ -10,6 +10,9 @@
   font-family: 'Times New Roman', Times, serif;
   padding-bottom: 2000px;
 }
+body{
+  margin: 0;
+}
 header{
   position: absolute;
   top: 0;
@@ -337,7 +340,6 @@ main{
   display: flex;
   align-items: center;
   justify-content: center;
-  justify-content: space-between;
   padding-left: 1.5rem;
   padding-right: 5rem;
 }
