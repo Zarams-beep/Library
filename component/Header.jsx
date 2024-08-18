@@ -9,7 +9,7 @@ import { LuMenuSquare } from "react-icons/lu";
 import { FaXmark } from "react-icons/fa6";
 import { RiArrowDropDownLine, RiArrowDropUpLine } from "react-icons/ri";
 import { useMediaQuery } from "react-responsive";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import { Link } from "react-router-dom";
 Link;
 const Header = () => {
@@ -178,6 +178,7 @@ const Header = () => {
               </nav>
             </div>
           </div>
+          <img src="../." alt="" />
         </section>
       </header>
     </>
