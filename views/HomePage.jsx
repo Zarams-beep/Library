@@ -1,38 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext} from "react";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
-import { objectImage, shuffleArray } from "../jsonMade/sectionPictures";
-import { FaCartPlus } from "react-icons/fa";
-import { FaPlus } from "react-icons/fa6";
-import { FiMinus } from "react-icons/fi";
-import axios from 'axios';
+import { objectImage, shuffleArray} from "../jsonMade/sectionPictures";
+import { ratingIt, ratingNumber} from "../helpers/Storage";
+import { Link } from "react-router-dom";
+import Header from "../component/Header";
+import { GlobalContext } from "../component/checkSomeThing";
 const HomePage = () => {
-    const [data,setData]=useState([])
-    const [loading,setLoading] = useState(false)
-    const [error, setError] = useState(null);
     const [author, setAuthor] = useState([])
     const [year, setYear] = useState([])
     const [title, setTitle] = useState([])
+    const [starIt, setStarIt] = useState([]);
 
-    
-    const fetchData = async () =>{
-        try{
-            setLoading(true)
-            const response = await axios.get("https://freetestapi.com/api/v1/books")
-            console.log("Fetched data:", response.data);
-            setData(response.data)
-            setOriginalData(response.data);
-        }
-        catch (error) {
-            setError(error);
-            console.error("Fetch data error: ", error);
-        }
-        finally{
-            setLoading(false);
-        }
-    }
-    useEffect(()=>{
-        fetchData()
-    },[])
+    const {data, originalData,setData} = useContext(GlobalContext)
 
     useEffect(()=>{
         if(data.length>0){
@@ -67,7 +46,6 @@ const HomePage = () => {
   }
 
   const [inputValue,setInputValue] = useState('')
-  const [originalData, setOriginalData] = useState([]);
   const searchBar = (valueInput) =>{
     const inputString = valueInput;
     let matchSearch;
@@ -98,18 +76,16 @@ const HomePage = () => {
   const handleRestart =()=>{
   setData(originalData)}
 
-//   useEffect(()=>{
-//     console.log(author);
-//     console.log(year);
-//     console.log(title);
-//     console.log(index);
-// },[author,year,title,index])
-
-  const img = ['/eugene-chystiakov-wcMysLw5ROM-unsplash.jpg','/girl-with-red-hat-mWI9FhbS43I-unsplash.jpg','/kelly-sikkema-7hspi6m0yO4-unsplash.jpg','/mediamodifier-QTL3JDJJ7OE-unsplash.jpg','/anne-nygard-qY3xHh2MOms-unsplash.jpg','/thomas-martinsen-4H9IuFBIpYM-unsplash.jpg','/sophia-baboolal-rMYrkFfw36U-unsplash.jpg','/rhamely-ibWI5ILt9P0-unsplash.jpg','/thought-catalog-6cfzNWD_KUo-unsplash.jpg','/jan-kahanek-g3O5ZtRk2E4-unsplash.jpg','/charles-etoroma-ddPTOSMa-MI-unsplash.jpg','/kelly-sikkema-2q_frVRXWfQ-unsplash.jpg','/aaron-burden-AXqMy8MSSdk-unsplash.jpg','/marissa-grootes-vdaJJbls3xE-unsplash.jpg','/kari-shea-apcUIqOPEIo-unsplash.jpg','/debby-hudson-asviIGR3CPE-unsplash.jpg','/josh-felise-yIMy3ERBc3o-unsplash.jpg','/rhamely-pJPE-ZlQVnM-unsplash.jpg','/erik-mclean-aNZnKZKfAq8-unsplash.jpg','/olga-prudnikova-EgYcr_N-UyE-unsplash.jpg','/surface-eChLA6svf_Y-unsplash.jpg','/mike-tinnion-3ym6i13Y9LU-unsplash.jpg','/jan-kahanek-g3O5ZtRk2E4-unsplash.jpg','/marissa-grootes-vdaJJbls3xE-unsplash.jpg','/debby-hudson-asviIGR3CPE-unsplash.jpg','/eugene-chystiakov-wcMysLw5ROM-unsplash.jpg','/girl-with-red-hat-mWI9FhbS43I-unsplash.jpg','/kelly-sikkema-7hspi6m0yO4-unsplash.jpg','/mediamodifier-QTL3JDJJ7OE-unsplash.jpg','/anne-nygard-qY3xHh2MOms-unsplash.jpg','/thomas-martinsen-4H9IuFBIpYM-unsplash.jpg','/sophia-baboolal-rMYrkFfw36U-unsplash.jpg','/rhamely-ibWI5ILt9P0-unsplash.jpg','/thought-catalog-6cfzNWD_KUo-unsplash.jpg','/jan-kahanek-g3O5ZtRk2E4-unsplash.jpg','/charles-etoroma-ddPTOSMa-MI-unsplash.jpg','/kelly-sikkema-2q_frVRXWfQ-unsplash.jpg','/aaron-burden-AXqMy8MSSdk-unsplash.jpg','/marissa-grootes-vdaJJbls3xE-unsplash.jpg','/kari-shea-apcUIqOPEIo-unsplash.jpg','/debby-hudson-asviIGR3CPE-unsplash.jpg','/josh-felise-yIMy3ERBc3o-unsplash.jpg','/rhamely-pJPE-ZlQVnM-unsplash.jpg','/erik-mclean-aNZnKZKfAq8-unsplash.jpg','/olga-prudnikova-EgYcr_N-UyE-unsplash.jpg','/surface-eChLA6svf_Y-unsplash.jpg','/mike-tinnion-3ym6i13Y9LU-unsplash.jpg','/jan-kahanek-g3O5ZtRk2E4-unsplash.jpg','/marissa-grootes-vdaJJbls3xE-unsplash.jpg','/kelly-sikkema-7hspi6m0yO4-unsplash.jpg',]
-  const [shuffleImg,setShuffleImg]=useState(shuffleArray(img))
+    const handleDataStorage = (bookData,img,rating,no) => {
+      localStorage.setItem('bookData', JSON.stringify(bookData))
+      localStorage.setItem('img', JSON.stringify(img))
+      localStorage.setItem('ratingIt',JSON.stringify(rating))
+      localStorage.setItem('ratingNumber',JSON.stringify(no))
+  };
 
   return (
     <>
+    <Header/>
       <main style={{ backgroundImage: `url(${shuffledImages[currentIndex]})` }}>
         <div className="divArrows">
           <IoIosArrowBack onClick={handlePrevious} className="iconsArrow"/>
@@ -121,9 +97,7 @@ const HomePage = () => {
             <h4>ARE YOU SEARCHING FOR A BOOK</h4>
             <h1>BIGGEST LIBRARY</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat quis numquam nobis iste.</p>
-        </div>
-
-        
+        </div>      
       </main>
 
       <section className="section2">
@@ -149,13 +123,18 @@ const HomePage = () => {
             <ul className="imgContainer">
               {data.map((el)=>
                   <li key={el.id}>
-                    <p className="imgP"><img src={shuffleImg[originalData.indexOf(el)]} alt={el.title} className="image"/></p>
+                    <Link to={"/viewbook"} className="linkStyle" onClick={() => handleDataStorage(el,el.cover_image,el.id, el.id)}>
+                    <div className="imgP"><img src={el.cover_image} alt={el.title} className="image"/></div>
                     <div className="box">
-                    <p>{el.title}</p>
-                    <p>{el.author}</p>
-                    <p>{el.publication_year}</p>
-                    <p>{el.genre[0]}, {el.genre[1]}</p>
+                    <div>{el.title}</div>
+                    <div>{el.author}</div>
+                    <div>{el.publication_year}</div>
+                    <div>{el.genre[0]}, {el.genre[1]}</div>
+                    <div className="rating">
+                      <p className="rating1">{ratingIt[el.id]}</p>
+                      <p>{ratingNumber[el.id]}</p></div>
                     </div>
+                    </Link>
                   </li>
               )}
             </ul>
@@ -164,13 +143,3 @@ const HomePage = () => {
   );
 };
 export default HomePage;
-
-
-{/* <div className="btnContainer">
-                      <div className="smallBtn">
-                      <button><FiMinus/></button>
-                      <p>1</p>
-                      <button><FaPlus/></button>
-                      </div>
-                      <button className="btnCart"><FaCartPlus/></button>
-                    </div> */}

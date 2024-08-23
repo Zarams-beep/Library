@@ -25,7 +25,7 @@ const Header = () => {
   };
   return (
     <>
-      <header>
+      <header className="header1">
         <section className="firstHeader">
           <Link className={`linkStyle logoLink ${is630 ? "invisble":""}`}>
             <div className="forLogo">
