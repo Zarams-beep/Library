@@ -1146,3 +1146,140 @@ main{
   margin-bottom: 1rem;
   font-weight: bold;
 }
+
+.footer1{
+  margin-top: 2rem;
+  margin-left: 15rem;
+  z-index: -2;
+}
+.newsLetter{
+  color: whitesmoke;
+  margin-left: 2rem;
+  padding-top: 15rem;
+  width: 50%;
+}
+.newsLetter h3{
+  margin-bottom: .5rem;
+  font-size: 4rem;
+}
+.newsLetter p{
+  margin-bottom: 1rem;
+}
+.newsLetter .subs{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.subs input{
+  width: 70%;
+  height: 3rem;
+  padding-left: .5rem;
+  border: none;
+  border-radius: .4rem;
+  margin-bottom: 1rem;
+}
+.subs button{
+  border: none;
+  border-radius: .4rem;
+}
+.footer2{
+  height: 20rem;
+  margin-left: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: whitesmoke;
+}
+.logoFooter{
+  display: flex;
+  gap: .5rem;
+  align-items: end;
+  font-size: 3rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.footer2 .footer{
+  width: 80%;
+  text-align: center;
+}
+.sectionNotes1{
+  margin-left: -7rem;
+}
+.sectionNotes1 button{
+  width: 50%;
+
+}
+.SignUpPage1{
+  display: flex;
+  height: 100vh;
+  padding-bottom: 2rem;
+}
+.forPage{
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.signUp1{
+  width: 25%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #212121;
+  color: whitesmoke;
+  font-size: 6rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* height: 100%; */
+}
+.signUp2{
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.signUp2 form ul{
+  list-style: none;
+}
+.signUp2 form ul li{
+  margin-bottom: 1rem;
+}
+.headerSignUp{
+  text-align: center;
+}
+.divFlex{
+  border: 1px solid #bbb7b7;
+  border-radius: .3rem;
+  display: flex;
+  align-items: center;
+  transition: border-color 0.3s;
+}
+.divFlex:focus-within {
+  border: 2px solid blue;
+}
+.passStyle .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  border: none; /* This removes the border */
+}
+.eyeIcon{
+  padding-right: 1rem;
+  cursor: 'pointer';
+  opacity: 0.4;
+}
+.my-custom-confirm-button {
+  width: 100% !important; 
+  background-color: whitesmoke; 
+  color: #212121; 
+  border: none;
+  border-radius: 5px; 
+  padding: 10px; 
+  box-sizing: border-box; 
+}
+
+.or{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .3rem;
+  margin-top: 1rem;
+}
+.or .line{
+  border: 1px solid black;
+}

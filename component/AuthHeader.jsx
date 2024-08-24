@@ -1,7 +1,6 @@
 import { IoSearch } from "react-icons/io5";
-import PropTypes from "prop-types";
-
-const Header2 = (name='User')=>{
+import { Link } from "react-router-dom";
+const AuthHeader = ()=>{
 
     return(
         <>
@@ -13,17 +12,13 @@ const Header2 = (name='User')=>{
                     </button>
                 </section>
 
-                <section className="sectionNotes">
-                    <div className="profileContainer">
-                        <img src="/profile.jpg" alt="profile" />
-                        <p>{name}</p>
-                    </div>
+                <section className="sectionNotes1">
+                    <button><Link style={{textDecoration:'none'}} to="/SignIn">Login</Link></button>
+                    <button><Link style={{textDecoration:'none'}}to="/SignUp1">SignUp</Link></button>
                 </section>
             </header>
         </>
     )
 }
 
-Header2.propTypes = {
-    name: PropTypes.string.isRequired,}
-export default Header2
+export default AuthHeader

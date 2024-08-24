@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext} from "react";
-import AuthHeader from "../component/AuthHeader";
+import Header2 from "../component/Header2";
 import SideBar from "../component/SideBar";
 import { Container ,Typography,Button,CardMedia,CardActions,CardContent,Card} from "@mui/material";
 import { ratingIt, ratingNumber, ratingAmount} from "../helpers/Storage";
@@ -11,7 +11,7 @@ import Category from "../component/Category";
 import Upcoming from "../component/Upcoming";
 import Footer from "../component/Footer";
 import { GlobalContext } from "../component/checkSomeThing";
-const ViewBook = () => {
+const ViewBook2 = () => {
   const [dataStore, setDataStore] = useState([]);
   const [images, setImages] = useState('');
   const [rating,setRating] = useState(0);
@@ -49,14 +49,14 @@ const ViewBook = () => {
     console.log(total);
   }
 
+  const [emailGet,setEmailGet] = useState('')
   useEffect(()=>{
-    console.log("Current SignUpValue:", SignUpValue);
-  },[SignUpValue])
-
+    setEmailGet(localStorage.getItem(JSON.parse('email')))
+  },[emailGet])
  
   return (
     <>
-      <AuthHeader/>
+      <Header2 name={SignUpValue[emailGet].frt + ' '+ SignUpValue[emailGet].lst}/>
       <SideBar number={count}/>
       <section className="viewPage">
       <Container>
@@ -113,4 +113,4 @@ const ViewBook = () => {
     </>
   );
 };
-export default ViewBook;
+export default ViewBook2;

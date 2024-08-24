@@ -37,11 +37,24 @@ export function GlobalProvider({children}) {
           })]
     },[data])
 
+     const getAllUsers = () => {
+    const users = {};
+    Object.keys(localStorage).forEach((key) => {
+      if (key.includes('@')) { // Assuming all keys with an '@' are emails
+        users[key] = JSON.parse(localStorage.getItem(key));
+      }
+    });
+    return users;
+  };
+
+  const SignUpValue = getAllUsers();
+      
     const contextObject = {
         data,
         setData,
         originalData,
         setOriginalData,
+        SignUpValue,
     }
     return (
         <GlobalContext.Provider value={contextObject}>
