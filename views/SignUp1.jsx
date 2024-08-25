@@ -162,7 +162,7 @@ const SignUp1 = () => {
     <Container className="SignUpPage1">
       <section className="forPage">
         <section className="signUp1">
-          <TbBooks />
+          <TbBooks className="tbBook"/>
           <Typography variant="h5">BOOKVAULT HUB</Typography>
         </section>
 
@@ -311,7 +311,7 @@ const SignUp1 = () => {
             </Button>
 
             <Typography variant="body2">
-              <Link to='SignIn'>
+              <Link to='/SignIn'>
               Already have an account? Sign in</Link>
             </Typography>
           </form>

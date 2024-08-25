@@ -1229,12 +1229,57 @@ main{
   color: whitesmoke;
   font-size: 6rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  /* height: 100%; */
 }
+@media all and (max-width:900px) {
+  .signUp1{
+    width: 30%;
+  }
+  .signUp1 h5{
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .tbBook{
+    font-size: 3rem;
+  }
+}
+@media all and (max-width:700px) {
+  .signUp1{
+    width: 40%;
+  }
+}
+@media all and (max-width:500px) {
+  .signUp1{
+    width: 50%;
+  }
+  .signUp1 h5{
+    font-size: 1rem;
+    text-align: center;
+  }
+  .tbBook{
+    font-size: 2.3rem;
+  }
+}
+@media all and (max-width:400px) {
+  .signUp1 h5{
+    font-size: .7rem;
+    text-align: center;
+  }
+  .tbBook{
+    font-size: 1.7rem;
+  }}
+ 
 .signUp2{
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   padding-left: 2rem;
   padding-right: 2rem;
+}
+@media all and (max-width:350px) {
+  .signUp1{
+    display: none;
+  }
+  .signUp2{
+    width: 100%;
+  }
 }
 .signUp2 form ul{
   list-style: none;

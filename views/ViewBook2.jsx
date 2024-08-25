@@ -49,14 +49,21 @@ const ViewBook2 = () => {
     console.log(total);
   }
 
-  const [emailGet,setEmailGet] = useState('')
-  useEffect(()=>{
-    setEmailGet(localStorage.getItem(JSON.parse('email')))
-  },[emailGet])
- 
+  const [fullName,setFullName] = useState('')
+  useEffect(() => {
+    const storedEmail = JSON.parse(localStorage.getItem("email")); 
+    console.log('Stored email:', storedEmail); // Debugging
+    console.log(SignUpValue);
+    const user = SignUpValue[storedEmail];
+    console.log(user);
+    setFullName((user.frt).toUpperCase());
+
+}, []);
+  
+
   return (
     <>
-      <Header2 name={SignUpValue[emailGet].frt + ' '+ SignUpValue[emailGet].lst}/>
+      <Header2 name={fullName}/>
       <SideBar number={count}/>
       <section className="viewPage">
       <Container>

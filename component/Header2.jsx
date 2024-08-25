@@ -1,7 +1,7 @@
 import { IoSearch } from "react-icons/io5";
 import PropTypes from "prop-types";
 
-const Header2 = (name='User')=>{
+const Header2 = ({name='User'})=>{
 
     return(
         <>
