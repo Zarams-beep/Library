@@ -7,6 +7,7 @@ import {
   Select,
   MenuItem,
 } from "@mui/material";
+import { ImGoogle3 } from "react-icons/im";
 import { useState, useContext} from "react";
 import { FaEye, FaEyeSlash} from "react-icons/fa";
 import Swal from 'sweetalert2';
@@ -312,9 +313,18 @@ const SignUp1 = () => {
               <p className="line"></p>
             </div>
 
-            <Typography variant="body2">
-              <Link to='/SignIn' className="linkClick">
-              Already have an account? Sign in</Link>
+            <Button
+              type="button"
+              variant="outlined"
+              startIcon={<ImGoogle3 />}
+              fullWidth
+            >
+              Sign in with Google
+            </Button>
+
+            <Typography sx={{paddingTop:'1rem', paddingBottom:'2rem'}}>
+              <Link to='/SignIn' className="linkClick1">
+              Already have an account? <span className="sign">Sign in</span></Link>
             </Typography>
           </form>
         </section>

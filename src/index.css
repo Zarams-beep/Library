@@ -1363,3 +1363,14 @@ main{
   text-decoration: none;
   color: whitesmoke;
 }
+.linkClick1{
+  text-decoration: none;
+  color: #212121;
+  transition: color .3s ease-in-out;
+}
+.sign{
+  color: purple;
+}
+.linkClick1:hover{
+  color: #494949;
+}
