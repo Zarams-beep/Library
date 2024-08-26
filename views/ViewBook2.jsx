@@ -11,6 +11,7 @@ import Upcoming from "../component/Upcoming";
 import Footer from "../component/Footer";
 import { GlobalContext } from "../component/checkSomeThing";
 import Category from "../component/Category";
+import { useMediaQuery } from "react-responsive";
 const ViewBook2 = () => {
   const [dataStore, setDataStore] = useState([]);
   const [images, setImages] = useState('');
@@ -59,6 +60,7 @@ const ViewBook2 = () => {
 
 }, [SignUpValue]);
   
+const is400 = useMediaQuery({query:'(max-width:400px)'})
 
   return (
     <>

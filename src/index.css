@@ -445,6 +445,7 @@ main{
   color: whitesmoke;
   z-index: 100;
 }
+
 .asidePart .headerPart {
   font-size: 1.4rem;
   padding-left: 1rem;
@@ -527,6 +528,7 @@ main{
   width: 100%;
   z-index: 100;
 }
+
 .header3{
   margin-left: 0;
 }
@@ -617,11 +619,9 @@ main{
   .profileContainer img{
     width: 80%;
     height: 80%;
-    margin-bottom: 0;
-    padding-bottom: 0;
   }
   .profileContainer p{
-    margin-top: -.4rem;
+    margin-top: 0rem;
   }
 }
 @media all and (max-width:620px) {
@@ -692,31 +692,47 @@ main{
     font-size: 1.5rem;
   }
 }
-@media all and (max-width:440px) {
-  .asidePart{
-    left: -1.4rem;
-  }
+@media all and (max-width:500px) {
   .header2{
-    margin-left: 6.9rem;
+    display: flex;
+    padding-left: .2rem;
   }
-  .viewPage{
-    margin-left: 8rem;
+  .headerPart{
+    width: 30%;
   }
-}
-@media all and (max-width:340px) {
+  .searchHeader{
+    width: 100%;
+    margin-left: .5rem;
+  }
+  .sectionNotes,.divContain{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .sectionNotes{
+    gap: 1.5rem;
+  }
+  .divContain{
+    margin-right: 1rem;
+    position: relative;
+  }
+  .asidePart{
+    display: none;
+  }
+  .header2,.viewPage{
+    margin-left: 0;
+  }
   .headerPart p{
-    font-size: .9rem;
-  }
-  .asidePart{
-    left: -1.5rem;
-  }
-  .header2{
-    margin-left: 6.6rem;
-  }
-  .viewPage{
-    margin-left: 8rem;
+    font-size: .8rem;
   }
 }
+@media all and (max-width:350px) {
+  .styleCard{
+    width: 85%;
+  }
+
+}
+
 .flexBox{
   display: flex;
   align-items: center;
@@ -726,74 +742,13 @@ main{
   align-items: center;
   gap: .5rem;
 }
-.btnValue,.btnCart{
+.btnValue{
   font-size: 1.2rem;
   color: #212121;
   transition: color .3s ease-in-out;
 }
-.btnValue:hover,.btnCart:hover{
+.btnValue:hover{
   color: dodgerblue;
-}
-@media all and (max-width:490px) {
-  .btnValue, .btnCart{
-    font-size: 1rem;
-  }
-  .styleCard{
-    width: 90%;
-  }
-}
-@media all and (max-width:470px) {
-  .styleCard{
-    width: 85%;
-  }
-}
-@media all and (max-width:460px) {
-  .styleCard{
-    width: 80%;
-  }
-  .cardCenter h4{
-    font-size: 1rem;
-  }
-  .cardCenter p{
-    font-size: .6rem;
-  }
-}
-@media all and (max-width:410px) {
-  .styleCard{
-    width: 70%;
-  }
-  .cardCenter,.flexBox{
-    width: 80%;
-  }
-  .flexBox{
-   margin-left: -2rem;
-  }
-}
-@media all and (max-width:380px) {
-  .styleCard{
-    width: 60%;
-  }
-}
-@media all and (max-width:343px) {
-  .styleCard{
-    width: 45%;
-  }
-  .btnValue,.btnCart{
-    font-size: .7rem;
-  }
-   .smallBtn{
-    width: 120%;
-    gap: 0;
-   }
-   .cardCenter h4{
-    font-size: .7rem;
-   }
-   .cardCenter,.flexBox{
-    width: 70%;
-  }
-  .viewPage{
-    margin-left: 7.6rem;
-  }
 }
 
 /* welcome component */
@@ -977,64 +932,18 @@ main{
   height: 10rem;
   object-fit: cover;
 }
-@media all and (max-width:600px) {
+
+@media all and (max-width:300px) {
+  .divCategoryPart3 li{
+    width: 85%;
+  }
   .divLine{
     display: none;
   }
-  .welcomePart1{
-    margin-bottom: 2rem;
-  }
-}
-@media all and (max-width:500px) {
-  .divCategoryPart3 li{
-    width: 90%;
-  }
   .welcomePart1 h4{
-    font-size: 1.5rem;
-  }
-  .welcomePart1 p{
-    font-size: .8rem;
+    font-size: 1.8rem;
     margin-bottom: 1rem;
   }
-}
-@media all and (max-width:460px) {
-  .divCategoryPart3 li{
-    width: 80%;
-  }
-}
-@media all and (max-width:410px) {
-  .divCategoryPart3 li{
-    width: 70%;
-  }
-  .cardWelcome{
-    width: 90%;
-  }
-}
-@media all and (max-width:380px) {
-  .divCategoryPart3 li{
-    width: 60%;
-  }
-
-    .cardWelcome{
-      width: 80%;
-    }
-}
-@media all and (max-width:340px) {
-  .divCategoryPart3 li{
-    width: 50%;
-  }
-  .cardWelcome{
-    width: 70%;
-  }
-}
-@media all and (max-width:300px) {
-  .divCategoryPart3 li{
-    width: 45%;
-  }
-
-    .cardWelcome{
-      width: 60%;
-    }
 }
 .ratin2{
   display: flex;
@@ -1085,8 +994,8 @@ main{
   display: flex;
   align-items: center;
   gap: 1rem;
+  text-align: justify;
 }
-
 .invisbile {
   display: none;
 }
@@ -1119,6 +1028,7 @@ main{
     font-size: .7rem;
   }
 }
+
 .side1 h4{
   font-weight: bold;
   padding-bottom: 1rem;
@@ -1150,12 +1060,19 @@ main{
   margin-bottom: 1rem;
   font-weight: bold;
 }
+@media all and (max-width:340px) {
+  .news .news1{
+    width: 80%;
+  }
+}
 
+/* footer */
 .footer1,.footerIt{
   margin-top: 2rem;
   margin-left: 15rem;
   z-index: -2;
 }
+
 .newsLetter{
   color: whitesmoke;
   margin-left: 2rem;
@@ -1193,6 +1110,11 @@ main{
   justify-content: center;
   flex-direction: column;
   color: whitesmoke;
+}
+@media all and (max-width:500px) {
+  .footer1,.footer2{
+    margin-left: 0;
+  }
 }
 .footerIt,.footerIt2{
   margin-left: 0;
@@ -1258,11 +1180,16 @@ main{
   .tbBook{
     font-size: 2.3rem;
   }
+  .newsLetter h3{
+    font-size: 2rem;
+  }
 }
 @media all and (max-width:400px) {
-  .signUp1 h5{
-    font-size: .7rem;
-    text-align: center;
+  .signUp1{
+    display: none;
+  }
+  .signUp2{
+    width: 100%;
   }
   .tbBook{
     font-size: 1.7rem;
@@ -1273,14 +1200,7 @@ main{
   padding-left: 2rem;
   padding-right: 2rem;
 }
-@media all and (max-width:350px) {
-  .signUp1{
-    display: none;
-  }
-  .signUp2{
-    width: 100%;
-  }
-}
+
 .signUp2 form ul{
   list-style: none;
 }
@@ -1373,4 +1293,43 @@ main{
 }
 .linkClick1:hover{
   color: #494949;
+}
+
+/* menu */
+.shopCart .iconsSide,.notificationValue{
+  position: relative;
+}
+.notificationValue p {
+  position: absolute;
+  color: red;
+}
+.shopCart p{
+  position: absolute;
+  top: -1.4rem;
+  right: .2rem;
+  color: red;
+}
+.list1{
+  position: absolute;
+  right: 1rem;
+  background-color: #212121;
+  left: -6rem;
+  right: -1rem;
+  top: 2rem;
+  opacity: 0;
+}
+.list1 ul{
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  
+}
+.list1 ul li{
+  display: flex;
+  align-items: center;
+  font-size: .8rem;
+}
+.opacityMenu{
+  opacity: 1;
 }

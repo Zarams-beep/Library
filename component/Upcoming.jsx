@@ -166,7 +166,7 @@ const Upcoming = () => {
         </section>
       </Container>
 
-      <Container>
+      <Container className="newContainer">
       <section className="welcomePart1">
           <Typography variant="h4">Latest News</Typography>
 
