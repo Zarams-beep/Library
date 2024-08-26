@@ -123,7 +123,7 @@ const HomePage = () => {
             <ul className="imgContainer">
               {data.map((el)=>
                   <li key={el.id}>
-                    <Link to={"/viewbook"} className="linkStyle" onClick={() => handleDataStorage(el,el.cover_image,el.id, el.id)}>
+                    <Link to={"/SignUp1"} className="linkStyle" onClick={() => handleDataStorage(el,el.cover_image,el.id, el.id)}>
                     <div className="imgP"><img src={el.cover_image} alt={el.title} className="image"/></div>
                     <div className="box">
                     <div>{el.title}</div>

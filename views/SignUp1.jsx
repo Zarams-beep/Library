@@ -13,7 +13,7 @@ import { FaEye, FaEyeSlash} from "react-icons/fa";
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import { GlobalContext } from "../component/checkSomeThing";
-import { Link } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 const SignUp1 = () => {
   const [frtName, setFrtName] = useState("");
   const [lstName, setLstName] = useState("");
@@ -25,6 +25,7 @@ const SignUp1 = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const MySwal = withReactContent(Swal);
+  const navigate = useNavigate();
   const {SignUpValue} = useContext(GlobalContext)
   const validateForm = (
     frt,
@@ -153,8 +154,19 @@ const SignUp1 = () => {
       validateForm(frtName, lstName, emailIt, phoneNo, pass, cmPass, roleChoice)
     ) {
       handleValue(frtName, lstName, emailIt, phoneNo, pass, cmPass, roleChoice);
-      console.log("Submitted Successfully");
-      console.log("Current SignUpValue:", SignUpValue);
+      MySwal.fire({
+        title: "Success",
+        text: 'Sign Up Successful. Kindly Sign in',
+        icon: "success",
+        background: "#212121",
+        color: "whitesmoke",
+        customClass: {
+          confirmButton: "my-custom-confirm-button"
+        }
+      }).then(() => {
+        navigate('/SignIn');
+        window.location.reload();
+      });
     }
   };
 
@@ -311,7 +323,7 @@ const SignUp1 = () => {
             </Button>
 
             <Typography variant="body2">
-              <Link to='/SignIn'>
+              <Link to='/SignIn' className="linkClick">
               Already have an account? Sign in</Link>
             </Typography>
           </form>

@@ -8,7 +8,6 @@
   width: 100vw;
   overflow-x: hidden;
   font-family: 'Times New Roman', Times, serif;
-  padding-bottom: 2000px;
 }
 body{
   margin: 0;
@@ -252,7 +251,10 @@ main{
   justify-content: space-between;
   font-size: 3rem;
 }
-
+.divArrows2{
+  left: 16rem;
+  right: 1rem;
+}
 .iconsArrow{
   transition: cursor .3s ease-in-out;
   color: whitesmoke;
@@ -307,7 +309,6 @@ main{
 .section2{
   background-color: #212121;
   padding-top: 0;
-  /* margin-top: 0; */
 }
 .section2 button{
   padding-top: 1rem;
@@ -511,7 +512,7 @@ main{
   }
 }
 /* header 2 part */
-.header2{
+.header2,.header3{
   position: fixed;
   top: 0;
   animation: moveLeft 3s forwards;
@@ -525,6 +526,9 @@ main{
   padding-bottom: 1rem;
   width: 100%;
   z-index: 100;
+}
+.header3{
+  margin-left: 0;
 }
 .searchHeader{
   display: flex;
@@ -1147,7 +1151,7 @@ main{
   font-weight: bold;
 }
 
-.footer1{
+.footer1,.footerIt{
   margin-top: 2rem;
   margin-left: 15rem;
   z-index: -2;
@@ -1181,7 +1185,7 @@ main{
   border: none;
   border-radius: .4rem;
 }
-.footer2{
+.footer2,.footerIt2{
   height: 20rem;
   margin-left: 15rem;
   display: flex;
@@ -1189,6 +1193,9 @@ main{
   justify-content: center;
   flex-direction: column;
   color: whitesmoke;
+}
+.footerIt,.footerIt2{
+  margin-left: 0;
 }
 .logoFooter{
   display: flex;
@@ -1201,13 +1208,6 @@ main{
 .footer2 .footer{
   width: 80%;
   text-align: center;
-}
-.sectionNotes1{
-  margin-left: -7rem;
-}
-.sectionNotes1 button{
-  width: 50%;
-
 }
 .SignUpPage1{
   display: flex;
@@ -1327,4 +1327,39 @@ main{
 }
 .or .line{
   border: 1px solid black;
+}
+.genreSection h4{
+  font-weight: bold;
+}
+.modelStyle{
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10rem;
+}
+.divComplete{
+  /* background-color: red; */
+  width: 50%;
+  text-align: center;
+}
+.btndiv{
+  margin-top: 1rem;
+}
+.checkOut{
+  margin-top: 10rem;
+  margin-left: 0;
+}
+
+
+/* Games */
+.cardGame .div1{
+  text-decoration: none;
+  color: #212121;
+  text-align: center;
+}
+
+.linkClick{
+  text-decoration: none;
+  color: whitesmoke;
 }

@@ -16,7 +16,7 @@ const Category = () => {
     const filtered = data.filter((book) => book.genre.includes(genre));
     setFilter(filtered);
     setActive(genre)
-    console.log('hh' + active);
+    console.log(active);
   };
 
   const listGenre = ['Fiction', 'Classic', 'Dystopian', 'Science Fiction', 'Adventure', 'Fantasy']
@@ -77,7 +77,7 @@ const Category = () => {
           <ul className="divCategoryPart3">
           {filtered.map((fi)=>(
             <li key={fi.id}>
-            <a href={"/viewbook"} className="linkStyle" onClick={() => handleDataStorage(fi,fi.cover_image,fi.id, fi.id)}>
+            <a href={"/viewbook2"} className="linkStyle" onClick={() => handleDataStorage(fi,fi.cover_image,fi.id, fi.id)}>
                   <div className="imgP"><img src={fi.cover_image} alt={fi.title} className="image"/></div>
                   <div className="box">
                   <div>{fi.title}</div>

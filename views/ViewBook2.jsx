@@ -7,10 +7,10 @@ import { FaCartPlus } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa6";
 import { FiMinus } from "react-icons/fi";
 import WelcomeComponent from "../component/WelcomeComponent";
-import Category from "../component/Category";
 import Upcoming from "../component/Upcoming";
 import Footer from "../component/Footer";
 import { GlobalContext } from "../component/checkSomeThing";
+import Category from "../component/Category";
 const ViewBook2 = () => {
   const [dataStore, setDataStore] = useState([]);
   const [images, setImages] = useState('');
@@ -35,30 +35,29 @@ const ViewBook2 = () => {
     
   }, []);
 
-  const handleAdd = () =>{
-    setCount(prev=>prev+1)
-  }
+  
   const handleSub = () =>{
     setCount(prev => (prev > 0 ? prev - 1 : 0));
   }
   const handleAddtoCart = ()=>{
+      setCount(prev=>prev+1)
+  }
+
+  useEffect(()=>{
     const total = ratingAmounts * count;
     localStorage.setItem('count', JSON.stringify(count));
     localStorage.setItem('total', JSON.stringify(total));
     console.log(count);
     console.log(total);
-  }
+  },[count])
 
   const [fullName,setFullName] = useState('')
   useEffect(() => {
     const storedEmail = JSON.parse(localStorage.getItem("email")); 
-    console.log('Stored email:', storedEmail); // Debugging
-    console.log(SignUpValue);
     const user = SignUpValue[storedEmail];
-    console.log(user);
     setFullName((user.frt).toUpperCase());
 
-}, []);
+}, [SignUpValue]);
   
 
   return (
@@ -103,9 +102,9 @@ const ViewBook2 = () => {
                       <div className="smallBtn">
                       <Button onClick={handleSub}><FiMinus className="btnValue"/></Button>
                       <Typography className="btnValue">{count}</Typography>
-                      <Button onClick={handleAdd}><FaPlus className="btnValue"/></Button>
+                      <Button onClick={handleAddtoCart}><FaPlus className="btnValue"/></Button>
                       </div>
-                      <Button onClick={handleAddtoCart}><FaCartPlus className="btnCart"/></Button>
+                    
               </CardActions>
             </CardContent>
           </Card>

@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import { MdCategory,MdLogout} from "react-icons/md";
 import { GiBookmarklet } from "react-icons/gi";
 // import { GoBookmark } from "react-icons/go";
-import { FaFileDownload,FaRegHeart,FaHeart } from "react-icons/fa";
-import { IoSettingsOutline } from "react-icons/io5";
+import {FaRegHeart,FaHeart } from "react-icons/fa";
+import { IoSettingsOutline,IoGameController } from "react-icons/io5";
 import { PiCatFill } from "react-icons/pi";
 import { IoIosStarOutline,IoIosStar } from "react-icons/io";
 import { GoBellFill } from "react-icons/go";
@@ -16,16 +16,26 @@ const SideBar = ({notificationNumber=0, number = 0})=>{
         <>
             <aside className="asidePart">
                 <section className="headerPart">
+                    <Link to='/' className="linkClick">
                     <p className="vault">BOOKVAULT</p>
                     <p className="hub">HUB</p>
+                    </Link>
                 </section>
                 <section className="list">
                     <ul>
-                        <li><MdCategory className="iconsSide"/>Category</li>
-                        <li><GiBookmarklet className="iconsSide"/>My Library</li>
+                        <li><Link to ="/category" className="linkClick"><MdCategory className="iconsSide"/>Category</Link></li>
+
+                        <li>
+                            <Link to="/" className="linkClick">
+                            <GiBookmarklet className="iconsSide"/>My Library</Link></li>
+
                         <li><FaRegHeart className="iconsSide"/>Donated Books</li>
-                        <li><FaFileDownload className="iconsSide"/>Download</li>
-                        <li className="relativeLi"><FaShoppingCart className="iconsSide"/><p>{number}</p>View Cart </li>
+                        <li><Link to="/games" className="linkClick"> 
+                            <IoGameController className="iconsSide"/>Games</Link></li>
+
+                        <li className="relativeLi">
+                        <Link to ="/CheckOut" className="linkClick"><FaShoppingCart className="iconsSide"/><p>{number}</p>View Cart </Link></li>
+
                         <li className="relativeLi2"><GoBellFill className="iconsSide"/><p>{notificationNumber}</p> Notification</li>
                         <li><IoIosStar className="iconsSide"/>Rated</li>
                     </ul>
