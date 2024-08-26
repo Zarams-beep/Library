@@ -7,7 +7,6 @@ import {
   Select,
   MenuItem,
 } from "@mui/material";
-import { ImGoogle3 } from "react-icons/im";
 import { useState, useContext} from "react";
 import { FaEye, FaEyeSlash} from "react-icons/fa";
 import Swal from 'sweetalert2';
@@ -312,15 +311,6 @@ const SignUp1 = () => {
               <Typography variant="body2">OR</Typography>
               <p className="line"></p>
             </div>
-
-            <Button
-              type="button"
-              variant="outlined"
-              startIcon={<ImGoogle3 />}
-              fullWidth
-            >
-              Sign in with Google
-            </Button>
 
             <Typography variant="body2">
               <Link to='/SignIn' className="linkClick">
