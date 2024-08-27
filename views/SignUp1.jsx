@@ -163,7 +163,8 @@ const SignUp1 = () => {
           confirmButton: "my-custom-confirm-button"
         }
       }).then(() => {
-        window.location.href('/SignIn')
+        window.location.reload('/SignIn')
+        
       });
     }
   };
