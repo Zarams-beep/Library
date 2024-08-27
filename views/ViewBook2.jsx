@@ -64,7 +64,7 @@ const is400 = useMediaQuery({query:'(max-width:400px)'})
 
   return (
     <>
-      <Header2 name={fullName} count={count}/>
+      <Header2 name={fullName} count={count} notificationNumber={0}/>
       <SideBar number={count}/>
       <section className="viewPage">
       <Container>
