@@ -87,11 +87,7 @@ const HomePage = () => {
     <>
     <Header/>
       <main style={{ backgroundImage: `url(${shuffledImages[currentIndex]})` }}>
-        <div className="divArrows">
-          <IoIosArrowBack onClick={handlePrevious} className="iconsArrow"/>
-
-          <IoIosArrowForward onClick={handleNext} className="iconsArrow"/>
-        </div>
+      
 
         <div className="notes">
             <h4>ARE YOU SEARCHING FOR A BOOK</h4>
@@ -99,6 +95,11 @@ const HomePage = () => {
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat quis numquam nobis iste.</p>
         </div>      
       </main>
+      <div className="divArrows">
+          <IoIosArrowBack onClick={handlePrevious} className="iconsArrow"/>
+
+          <IoIosArrowForward onClick={handleNext} className="iconsArrow"/>
+        </div>
 
       <section className="section2">
         <button className="btnSection" onClick={handleBtn}>TITLE</button>

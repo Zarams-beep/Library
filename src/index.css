@@ -255,24 +255,27 @@ main{
   left: 18rem;
   right: 3rem;
 }
+.iconsArrow{
+  color: #212121;
+  transition: cursor .3s ease-in-out;
+  
+}
+.iconsArrow:hover{
+  cursor: pointer;
+}
+
 @media all and (max-width:600px) {
   .divArrows2{
     left: 12rem;
   }
-
 }
+
 @media all and (max-width:500px) {
   .divArrows2{
     left: 1rem;
   }
 }
-.iconsArrow{
-  transition: cursor .3s ease-in-out;
-  color: #212121;
-}
-.iconsArrow:hover{
-  cursor: pointer;
-}
+
 .notes{
   color: whitesmoke;
   position: absolute;
