@@ -162,9 +162,7 @@ const SignUp1 = () => {
         customClass: {
           confirmButton: "my-custom-confirm-button"
         }
-      }).then(() => {
-        navigate('/SignIn');
-      });
+      })
     }
   };
 
