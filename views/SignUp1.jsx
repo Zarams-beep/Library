@@ -166,8 +166,8 @@ const SignUp1 = () => {
     }
   };
 
-  const handleLinkClick = (e) => {
-    e.preventDefault(); // Prevent the default link behavior
+  const handleLinkClick = () => {
+
     window.location.href = '/SignIn'; // Force a page reload
   };
 
