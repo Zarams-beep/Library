@@ -17,15 +17,15 @@ const router = createBrowserRouter([
     element: <HomePage/>,
   },
   {
-    path:"/viewbook2",
+    path:"/viewbook",
     element:<ViewBook2 />,
   },
   {
-    path: "/SignUp1",
+    path: "/sign-up",
     element:<SignUp1/>,
   },
   {
-    path:'/SignIn', 
+    path:'/sign-in', 
     element: <SignIn/>,
   },
   {
@@ -33,7 +33,7 @@ const router = createBrowserRouter([
     element:<AsideCategory/>, 
   },
   {
-    path:'/CheckOut', 
+    path:'/check-out', 
     element:<CheckOut/>,
   },
   {

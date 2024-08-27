@@ -79,7 +79,7 @@ const AsideCategory = () => {
                 {booksByGenre[genre].map((book) => (
                   <li key={book.id}>
                     <a
-                      href={"/viewbook2"} 
+                      href={"/viewbook"} 
                       className="linkStyle"
                       onClick={() => {
                        

@@ -163,7 +163,7 @@ const SignUp1 = () => {
           confirmButton: "my-custom-confirm-button"
         }
       }).then(() => {
-        navigate('/SignIn')
+        navigate('/sign-in')
       });
     }
   };
@@ -321,7 +321,7 @@ const SignUp1 = () => {
             </Button>
 
             <Typography sx={{paddingTop:'1rem', paddingBottom:'2rem'}}>
-              <Link to='/SignIn' className="linkClick1">
+              <Link to='/sign-in' className="linkClick1">
               Already have an account? <span className="sign">Sign in</span></Link>
             </Typography>
           </form>

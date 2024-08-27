@@ -73,7 +73,7 @@ const Header2 = ({name='User',count= 0, notificationNumber=0})=>{
                     </ul>
                 </section>
                         <div className="shopCart">
-                        <Link to ="/CheckOut" className="linkClick"><FaShoppingCart className="iconsSide"/><p>{count}</p></Link>
+                        <Link to ="/check-out" className="linkClick"><FaShoppingCart className="iconsSide"/><p>{count}</p></Link>
                         </div>
 
           </div>

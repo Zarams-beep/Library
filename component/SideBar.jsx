@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { MdCategory,MdLogout} from "react-icons/md";
 import { GiBookmarklet } from "react-icons/gi";
-// import { GoBookmark } from "react-icons/go";
 import {FaRegHeart} from "react-icons/fa";
 import { IoSettingsOutline,IoGameController } from "react-icons/io5";
 import { PiCatFill } from "react-icons/pi";
@@ -34,7 +33,7 @@ const SideBar = ({notificationNumber=0, number = 0})=>{
                             <IoGameController className="iconsSide"/>Games</Link></li>
 
                         <li className="relativeLi">
-                        <Link to ="/CheckOut" className="linkClick"><FaShoppingCart className="iconsSide"/><p>{number}</p>View Cart </Link></li>
+                        <Link to ="/check-out" className="linkClick"><FaShoppingCart className="iconsSide"/><p>{number}</p>View Cart </Link></li>
 
                         <li className="relativeLi2"><GoBellFill className="iconsSide"/><p>{notificationNumber}</p> Notification</li>
                         <li><IoIosStar className="iconsSide"/>Rated</li>

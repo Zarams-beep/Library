@@ -90,7 +90,7 @@ const CheckOut = ()=>{
                               <Typography variant="h3">Completed</Typography>
                               <Typography variant="h3">Happy Reading!!</Typography>
                               <div className="btndiv">
-                              <Link to='/viewbook2' className="linking"><Button>Go back</Button></Link>
+                              <Link to='/viewbook' className="linking"><Button>Go back</Button></Link>
                               </div>
                             </div>
                      

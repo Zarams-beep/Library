@@ -178,7 +178,7 @@ const Header = () => {
               </nav>
             </div>
           </div>
-          <img src="../." alt="" />
+          
         </section>
       </header>
     </>
