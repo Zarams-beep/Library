@@ -164,8 +164,7 @@ const SignUp1 = () => {
           confirmButton: "my-custom-confirm-button"
         }
       }).then(() => {
-        navigate('/login');
-        window.location.reload();
+        window.location.href = '/login';
       });
     }
   };
