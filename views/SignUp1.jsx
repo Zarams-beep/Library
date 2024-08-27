@@ -164,6 +164,7 @@ const SignUp1 = () => {
         }
       }).then(() => {
         window.location.reload('/SignIn')
+        navigate('/SignIn')
         
       });
     }
