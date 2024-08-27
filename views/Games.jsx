@@ -33,7 +33,7 @@ import {
     const gameCards = [
       {
         key: 1,
-        to: "https://",
+        to: "https://chizaram-trivia-game.vercel.app/",
         image: "/andrey-metelev-DEuansgqjns-unsplash.jpg",
         alt: "Quiz Game",
         title: "Trivia Game",
@@ -41,7 +41,7 @@ import {
       },
       {
         key: 2,
-        to: "https://",
+        to: "https://rock-paper-scissor-jade-tau.vercel.app/",
         image: "/fadilah-im-2HkXcDPnGh4-unsplash.jpg",
         alt: "Hand Scissor",
         title: "Rock Paper Scissor Game",
@@ -49,7 +49,7 @@ import {
       },
       {
         key: 3,
-        to: "https://my",
+        to: "https://my-quiz-pal.vercel.app/",
         image: "/olav-ahrens-rotne-jvBXiynINGE-unsplash.jpg",
         alt: "Trivia Game",
         title: "Group Quiz App",
@@ -120,8 +120,9 @@ import {
               )}
             </section>
           </Container>
+          <WelcomeComponent />
         </section>
-        <WelcomeComponent />
+
         <Footer />
       </>
     );

@@ -45,7 +45,9 @@ const Header2 = ({name='User',count= 0, notificationNumber=0})=>{
           <div className="divContain">
             <div onClick={handleOpen}>
               {isOpen ? <RxCross2 /> : <IoMdMenu />}
-              <section className={`list1 ${isOpen?'opacityMenu':''}`}>
+              
+          </div>
+          <section className={`list1 ${isOpen?'opacityMenu':''}`}>
                     <ul>
                         <li><Link to ="/category" className="linkClick"><MdCategory className="iconsSide"/>Category</Link></li>
 
@@ -70,7 +72,6 @@ const Header2 = ({name='User',count= 0, notificationNumber=0})=>{
                         <li><MdLogout className="iconsSide"/>Logout</li>
                     </ul>
                 </section>
-          </div>
                         <div className="shopCart">
                         <Link to ="/CheckOut" className="linkClick"><FaShoppingCart className="iconsSide"/><p>{count}</p></Link>
                         </div>
