@@ -170,7 +170,7 @@ import {
               </Button>
   
               <Typography variant="body2">
-                Don&#39;t have an account? <Link to="/SignUp1" onClick={window.stop()}className="linkClick1">Sign Up</Link>
+                Don&#39;t have an account? <Link to="/SignUp1" className="linkClick1">Sign Up</Link>
               </Typography>
             </form>
           </section>
