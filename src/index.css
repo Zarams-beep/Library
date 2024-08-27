@@ -258,7 +258,6 @@ main{
 @media all and (max-width:600px) {
   .divArrows2{
     left: 12rem;
-    z-index: 2;
   }
 
 }
