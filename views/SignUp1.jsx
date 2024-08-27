@@ -147,7 +147,6 @@ const SignUp1 = () => {
     }
 };
   
-  const [isTrue,setTrue] = useState(false)
   const handleSubmit = (event) => {
     event.preventDefault();
     if (
@@ -163,10 +162,7 @@ const SignUp1 = () => {
         customClass: {
           confirmButton: "my-custom-confirm-button"
         }
-      }).then(() => {
-        navigate('/SignIn');
-        window.location.reload();
-      });
+      })
     }
   };
 
@@ -303,8 +299,7 @@ const SignUp1 = () => {
               variant="contained"
               onClick={handleSubmit}
               fullWidth
-            >
-              Sign Up
+            >Sign Up
             </Button>
 
             <div className="or">
@@ -323,8 +318,8 @@ const SignUp1 = () => {
             </Button>
 
             <Typography sx={{paddingTop:'1rem', paddingBottom:'2rem'}}>
-              <Link to='/SignIn' className="linkClick1">
-              Already have an account? <span className="sign">Sign in</span></Link>
+              <a href='/SignIn' className="linkClick1">
+              Already have an account? <span className="sign">Sign in</span></a>
             </Typography>
           </form>
         </section>
