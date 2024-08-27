@@ -164,7 +164,8 @@ const SignUp1 = () => {
           confirmButton: "my-custom-confirm-button"
         }
       }).then(() => {
-        window.location.href = '/login';
+        window.location.reload();
+        window.location.href = '/SignIn';
       });
     }
   };
@@ -322,7 +323,7 @@ const SignUp1 = () => {
             </Button>
 
             <Typography sx={{paddingTop:'1rem', paddingBottom:'2rem'}}>
-              <Link to='/login' className="linkClick1">
+              <Link to='/SignIn' className="linkClick1">
               Already have an account? <span className="sign">Sign in</span></Link>
             </Typography>
           </form>
