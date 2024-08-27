@@ -162,13 +162,10 @@ const SignUp1 = () => {
         customClass: {
           confirmButton: "my-custom-confirm-button"
         }
-      })
+      }).then(() => {
+        window.location.href('/SignIn')
+      });
     }
-  };
-
-  const handleLinkClick = async () => {
-
-    window.location.href = '/SignIn';
   };
 
   return (
@@ -324,7 +321,7 @@ const SignUp1 = () => {
             </Button>
 
             <Typography sx={{paddingTop:'1rem', paddingBottom:'2rem'}}>
-              <Link className="linkClick1" onClick={handleLinkClick}>
+              <Link to='/SignIn' className="linkClick1">
               Already have an account? <span className="sign">Sign in</span></Link>
             </Typography>
           </form>
