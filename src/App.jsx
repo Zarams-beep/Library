@@ -2,15 +2,14 @@ import {
   createBrowserRouter,
   RouterProvider
 } from 'react-router-dom';
-import HomePage from '../views/HomePage';
-import { GlobalProvider } from '../component/checkSomeThing';
-import SignUp1 from '../views/SignUp1';
-import SignIn from '../views/SignIn';
-import ViewBook2 from '../views/ViewBook2';
-import AsideCategory from '../component/AsideCategory';
-import CheckOut from '../views/Checkout';
-import Games from '../views/Games';
-
+import HomePage from './views/HomePage';
+import { GlobalProvider } from './component/checkSomeThing';
+import SignUp1 from './views/SignUp1';
+import SignIn from './views/SignIn';
+import ViewBook2 from './views/ViewBook2';
+import AsideCategory from './component/AsideCategory';
+import CheckOut from './views/Checkout';
+import Games from './views/Games';
 const router = createBrowserRouter([
   {
     path:"/",
