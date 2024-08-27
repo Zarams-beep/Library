@@ -147,7 +147,7 @@ const SignUp1 = () => {
     }
 };
   
-
+  const [isTrue,setTrue] = useState(false)
   const handleSubmit = (event) => {
     event.preventDefault();
     if (
@@ -164,8 +164,8 @@ const SignUp1 = () => {
           confirmButton: "my-custom-confirm-button"
         }
       }).then(() => {
+        navigate('/SignIn');
         window.location.reload();
-        window.location.href = '/SignIn';
       });
     }
   };
