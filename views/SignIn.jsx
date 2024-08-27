@@ -22,7 +22,7 @@ import {
     const { SignUpValue } = useContext(GlobalContext);
     const navigate = useNavigate();
   
-    
+  
     const validateSignIn = (email, pass) => {
       if (!email || !pass) {
         MySwal.fire({

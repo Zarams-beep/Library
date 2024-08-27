@@ -147,13 +147,14 @@ const SignUp1 = () => {
     }
 };
   
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (
-      validateForm(frtName, lstName, emailIt, phoneNo, pass, cmPass, roleChoice)
-    ) {
-      handleValue(frtName, lstName, emailIt, phoneNo, pass, cmPass, roleChoice);
-      MySwal.fire({
+const handleSubmit = async (event) => {
+  event.preventDefault();
+
+  if (validateForm(frtName, lstName, emailIt, phoneNo, pass, cmPass, roleChoice)) {
+    try {
+      await handleValue(frtName, lstName, emailIt, phoneNo, pass, cmPass, roleChoice);
+
+      await MySwal.fire({
         title: "Success",
         text: 'Sign Up Successful. Kindly Sign in',
         icon: "success",
@@ -162,9 +163,19 @@ const SignUp1 = () => {
         customClass: {
           confirmButton: "my-custom-confirm-button"
         }
-      })
+      });
+
+      navigate('/SignIn');
+      window.location.reload(); // Reloads the page if necessary
+    } catch (error) {
+      console.error('Error handling form submission:', error);
+      // Handle error (e.g., show a message to the user)
     }
-  };
+  } else {
+    // Handle validation errors
+    console.log('Form validation failed');
+  }
+};
 
   return (
     <Container className="SignUpPage1">
@@ -300,6 +311,7 @@ const SignUp1 = () => {
               onClick={handleSubmit}
               fullWidth
             >Sign Up
+
             </Button>
 
             <div className="or">
@@ -318,8 +330,8 @@ const SignUp1 = () => {
             </Button>
 
             <Typography sx={{paddingTop:'1rem', paddingBottom:'2rem'}}>
-              <a href='/SignIn' className="linkClick1">
-              Already have an account? <span className="sign">Sign in</span></a>
+              <Link to='/SignIn' className="linkClick1">
+              Already have an account? <span className="sign">Sign in</span></Link>
             </Typography>
           </form>
         </section>
