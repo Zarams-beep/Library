@@ -39,15 +39,13 @@ const router = createBrowserRouter([
     path:'/games', 
     element:<Games/>,
   }
-])
-const App = () => {
+]);
+function App () {
 
   return (
-   <>
    <GlobalProvider>
      <RouterProvider router={router}/>
     </GlobalProvider>
-   </>
   );
 };
 
