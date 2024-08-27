@@ -147,14 +147,13 @@ const SignUp1 = () => {
     }
 };
   
-const handleSubmit = async (event) => {
-  event.preventDefault();
-
-  if (validateForm(frtName, lstName, emailIt, phoneNo, pass, cmPass, roleChoice)) {
-    try {
-      await handleValue(frtName, lstName, emailIt, phoneNo, pass, cmPass, roleChoice);
-
-      await MySwal.fire({
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (
+      validateForm(frtName, lstName, emailIt, phoneNo, pass, cmPass, roleChoice)
+    ) {
+      handleValue(frtName, lstName, emailIt, phoneNo, pass, cmPass, roleChoice);
+      MySwal.fire({
         title: "Success",
         text: 'Sign Up Successful. Kindly Sign in',
         icon: "success",
@@ -163,19 +162,11 @@ const handleSubmit = async (event) => {
         customClass: {
           confirmButton: "my-custom-confirm-button"
         }
+      }).then(() => {
+        navigate('/SignIn');
       });
-
-      navigate('/SignIn');
-      window.location.reload(); // Reloads the page if necessary
-    } catch (error) {
-      console.error('Error handling form submission:', error);
-      // Handle error (e.g., show a message to the user)
     }
-  } else {
-    // Handle validation errors
-    console.log('Form validation failed');
-  }
-};
+  };
 
   return (
     <Container className="SignUpPage1">
