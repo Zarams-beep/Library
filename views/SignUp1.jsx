@@ -166,9 +166,9 @@ const SignUp1 = () => {
     }
   };
 
-  const handleLinkClick = () => {
+  const handleLinkClick = async () => {
 
-    window.location.href = '/SignIn'; // Force a page reload
+    window.location.href = '/SignIn';
   };
 
   return (
@@ -324,7 +324,7 @@ const SignUp1 = () => {
             </Button>
 
             <Typography sx={{paddingTop:'1rem', paddingBottom:'2rem'}}>
-              <Link to='/SignIn' className="linkClick1" onClick={handleLinkClick}>
+              <Link className="linkClick1" onClick={handleLinkClick}>
               Already have an account? <span className="sign">Sign in</span></Link>
             </Typography>
           </form>
