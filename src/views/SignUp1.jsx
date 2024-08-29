@@ -164,6 +164,7 @@ const SignUp1 = () => {
         }
       }).then(() => {
         navigate('/sign-in')
+        window.location.reload();
       });
     }
   };
