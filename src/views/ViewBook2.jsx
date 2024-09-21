@@ -12,6 +12,7 @@ import Footer from "../component/Footer";
 import { GlobalContext } from "../component/checkSomeThing";
 import Category from "../component/Category";
 import { useMediaQuery } from "react-responsive";
+import LazyLoad from "react-lazyload";
 const ViewBook2 = () => {
   const [dataStore, setDataStore] = useState([]);
   const [images, setImages] = useState('');
@@ -70,13 +71,13 @@ const is400 = useMediaQuery({query:'(max-width:400px)'})
       <Container>
         <section className="viewSection">
           <Card className="styleCard">
-            <CardMedia
+            <LazyLoad><CardMedia
               component="img"
               height="380"
               image={images}
               alt={dataStore.title||''}
               sx={{objectFit:'cover'}}
-            />
+            /></LazyLoad>
             <CardContent className="cardCenter">
               <Typography variant="h4" sx={{fontWeight:'bold'}}>{dataStore.title}</Typography>
 

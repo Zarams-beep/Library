@@ -5,6 +5,7 @@ import { ratingIt, ratingNumber} from "../helpers/Storage";
 import { Link } from "react-router-dom";
 import Header from "../component/Header";
 import { GlobalContext } from "../component/checkSomeThing";
+import LazyLoad from "react-lazyload";
 const HomePage = () => {
     const [author, setAuthor] = useState([])
     const [year, setYear] = useState([])
@@ -125,7 +126,9 @@ const HomePage = () => {
               {data.map((el)=>
                   <li key={el.id}>
                     <Link to={"/sign-up"} className="linkStyle" onClick={() => handleDataStorage(el,el.cover_image,el.id, el.id)}>
-                    <div className="imgP"><img src={el.cover_image} alt={el.title} className="image"/></div>
+                    <div className="imgP">
+                    <LazyLoad>
+                    <img src={el.cover_image} alt={el.title} className="image"/></LazyLoad></div>
                     <div className="box">
                     <div>{el.title}</div>
                     <div>{el.author}</div>
